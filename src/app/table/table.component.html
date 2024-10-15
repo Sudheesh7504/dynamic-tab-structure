@@ -1,0 +1,25 @@
+<table class="table-sm">
+    <thead>
+        <tr>
+            <th *ngFor="let column of columnData">{{column}}</th>
+            <!-- <th *ngIf="activeTabNumber===1">Actions</th> -->
+            <th *ngIf="activeTabName === 'Pending Authorisation'">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let search of searchData | paginate: Pageconfig">
+            <td *ngFor="let column of columnData">
+                {{search[column]}}
+            </td>
+            <!-- <td *ngIf="activeTabNumber===1">
+                <button>review</button>
+            </td> -->
+            <td *ngIf="activeTabName === 'Pending Authorisation'">
+                <button>review</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-end mt-3">
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

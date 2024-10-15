@@ -1,0 +1,11 @@
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.active {
+    font-weight: 200;
+    color: blue;
+
+}

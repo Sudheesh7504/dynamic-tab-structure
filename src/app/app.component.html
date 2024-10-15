@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="searchTerm" />
+<button (click)="serchResults($event)">serach</button>
+<button (click)="sortResults()">sort by</button>
+<app-tabs [tabsArray]="['Drafts','Pending Authorisation','Rejected','Authorised','Completed']"
+  (acivetabIndex)="setActiveTabData($event)"></app-tabs>
+
+<!-- <app-table [columnData]="['firstname','lastname','email','phone','website']" [tableData]="usersData"
+  [activeTabNumber]="activeTabNumber">
+</app-table> -->
+
+<app-table [columnData]="['firstname','lastname','email','phone','website']" [tableData]="usersData"
+  [activeTabName]="activeTabName" [searchData]="searchData">
+</app-table>
